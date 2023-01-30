@@ -1,58 +1,42 @@
 import { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-
-import watercolor1_ae from "./assets/watercolor1_ae.svg";
-import watercolor1_gm from "./assets/watercolor1_gm.svg";
-import watercolor1_mt from "./assets/watercolor1_mt.svg";
-import watercolor1_pp from "./assets/watercolor1_pp.svg";
-import watercolor1_rr from "./assets/watercolor1_rr.svg";
-
-import watercolor2_ae from "./assets/watercolor2_ae.svg";
-import watercolor2_gm from "./assets/watercolor2_gm.svg";
-import watercolor2_mt from "./assets/watercolor2_mt.svg";
-import watercolor2_pp from "./assets/watercolor2_pp.svg";
-import watercolor2_rr from "./assets/watercolor2_rr.svg";
-
-import watercolor3_ae from "./assets/watercolor3_ae.svg";
-import watercolor3_gm from "./assets/watercolor3_gm.svg";
-import watercolor3_mt from "./assets/watercolor3_mt.svg";
-import watercolor3_pp from "./assets/watercolor3_pp.svg";
-import watercolor3_rr from "./assets/watercolor3_rr.svg";
-
-import watercolor4_ae from "./assets/watercolor4_ae.svg";
-import watercolor4_gm from "./assets/watercolor4_gm.svg";
-import watercolor4_mt from "./assets/watercolor4_mt.svg";
-import watercolor4_pp from "./assets/watercolor4_pp.svg";
-import watercolor4_rr from "./assets/watercolor4_rr.svg";
-
-import watercolor5_ae from "./assets/watercolor5_ae.svg";
-import watercolor5_gm from "./assets/watercolor5_gm.svg";
-import watercolor5_mt from "./assets/watercolor5_mt.svg";
-import watercolor5_pp from "./assets/watercolor5_pp.svg";
-import watercolor5_rr from "./assets/watercolor5_rr.svg";
-
+import { ReactComponent as Splash1 } from "./assets/splash1.svg";
+import { ReactComponent as Splash2 } from "./assets/splash2.svg";
+import { ReactComponent as Splash3 } from "./assets/splash3.svg";
+import { ReactComponent as Splash4 } from "./assets/splash4.svg";
+import "./index.css";
 import stars from "./assets/stars.svg";
 
-import watercolor6 from "./assets/watercolor6_xl.svg";
-import "./index.css";
+const colorGris = {
+  green800: "#59574a",
+  green600: "#778c79",
+  green400: "#87bfb4",
+  green100: "#eef2cf",
+  red100: "#f2cfbb",
+  red200: "#f3a2b1",
+  red400: "#f36d78",
+  red800: "#8c292c",
+};
 
 function App() {
   const parallax = useRef<IParallax>(null!);
 
   return (
-    <div style={{ width: "100%", height: "100%", background: "#253237" }}>
-      <Parallax ref={parallax} pages={3}>
+    <div style={{ width: "100%", height: "100%", background: "white" }}>
+      <Parallax ref={parallax} pages={3} style={{ top: "0", left: "0" }}>
+        {/* Sections bg */}
         <ParallaxLayer
           offset={1}
           speed={1}
-          style={{ backgroundColor: "white" }}
+          style={{ backgroundColor: colorGris.green100 }}
         />
         <ParallaxLayer
           offset={2}
           speed={1}
-          style={{ backgroundColor: "white" }}
+          style={{ backgroundColor: colorGris.green100 }}
         />
 
+        {/* Page Background */}
         <ParallaxLayer
           offset={0}
           speed={0}
@@ -63,89 +47,146 @@ function App() {
           }}
         />
 
+        {/* First frame */}
+
+        <ParallaxLayer offset={0} speed={0.1} style={{ opacity: 0.2 }}>
+          <Splash1
+            style={{
+              width: "100%",
+              marginLeft: "-30%",
+              marginTop: "-20%",
+              color: colorGris.red400,
+            }}
+          />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={0} speed={-0.3} style={{ opacity: 0.4 }}>
+          <Splash2
+            style={{
+              width: "100%",
+              marginLeft: "35%",
+              color: colorGris.green400,
+              marginTop: "-5%",
+            }}
+          />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={0} speed={0.9} style={{ opacity: 0.2 }}>
+          <Splash3
+            style={{
+              width: "100%",
+              marginLeft: "10%",
+              color: colorGris.red100,
+              marginBottom: "100%",
+            }}
+          />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={1.2} style={{ opacity: 0.4 }}>
+          <Splash3
+            style={{
+              width: "70%",
+              marginLeft: "25%",
+              color: colorGris.red100,
+              marginBottom: "80%",
+            }}
+          />
+        </ParallaxLayer>
+
+        {/* End of first frame */}
+
+        {/* green double layered - pg 3 */}
         <ParallaxLayer
           offset={1.3}
           speed={-0.3}
-          style={{ pointerEvents: "none" }}
+          style={{ pointerEvents: "none", opacity: 0.4 }}
         >
-          <img
-            src={watercolor3_ae}
-            style={{ width: "40%", marginLeft: "70%" }}
+          <Splash4
+            style={{
+              display: "block",
+              width: "40%",
+              marginLeft: "-10%",
+              color: colorGris.green400,
+              transform: "rotate(170deg)",
+            }}
           />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
-          <img
-            src={watercolor2_rr}
-            style={{ display: "block", width: "30%", marginLeft: "55%" }}
+        {/* end green double layered - pg 3 */}
+
+        <ParallaxLayer offset={1} speed={1} style={{ opacity: 0.3 }}>
+          <Splash3
+            style={{
+              width: "30%",
+              marginLeft: "55%",
+              color: colorGris.green400,
+            }}
           />
-          <img
-            src={watercolor2_gm}
-            style={{ display: "block", width: "25%", marginLeft: "15%" }}
+        </ParallaxLayer>
+        <ParallaxLayer offset={1.75} speed={0.8} style={{ opacity: 0.3 }}>
+          <Splash2
+            style={{
+              display: "block",
+              width: "20%",
+              marginLeft: "70%",
+              color: colorGris.red800,
+            }}
+          />
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={0.4} style={{ opacity: 0.4 }}>
+          <Splash3
+            style={{
+              display: "block",
+              width: "70%",
+              marginLeft: "10%",
+              color: colorGris.red200,
+            }}
           />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-          <img
-            src={watercolor2_pp}
-            style={{ display: "block", width: "20%", marginLeft: "70%" }}
-          />
-          <img
-            src={watercolor5_ae}
-            style={{ display: "block", width: "20%", marginLeft: "40%" }}
-          />
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
-          <img
-            src={watercolor3_mt}
-            style={{ display: "block", width: "70%", marginLeft: "10%" }}
-          />
-          <img
-            src={watercolor4_ae}
-            style={{ display: "block", width: "20%", marginLeft: "75%" }}
+        <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 1 }}>
+          <Splash3
+            style={{
+              display: "block",
+              width: "60%",
+              marginLeft: "80%",
+              color: colorGris.green800,
+            }}
           />
         </ParallaxLayer>
-
-        <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
-          <img
-            src={watercolor3_mt}
-            style={{ display: "block", width: "20%", marginLeft: "60%" }}
-          />
-          <img
-            src={watercolor2_ae}
-            style={{ display: "block", width: "25%", marginLeft: "30%" }}
-          />
-          <img
-            src={watercolor3_mt}
-            style={{ display: "block", width: "60%", marginLeft: "80%" }}
-          />
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
-          <img
-            src={watercolor1_rr}
-            style={{ display: "block", width: "40%", marginLeft: "5%" }}
-          />
-          <img
-            src={watercolor2_gm}
-            style={{ display: "block", width: "15%", marginLeft: "75%" }}
+        <ParallaxLayer offset={2.6} speed={0.6} style={{ opacity: 0.6 }}>
+          <Splash2
+            style={{
+              display: "block",
+              width: "15%",
+              marginLeft: "75%",
+              color: colorGris.red800,
+            }}
           />
         </ParallaxLayer>
 
         <ParallaxLayer
           offset={2.5}
-          speed={-0.4}
+          speed={1.2}
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             pointerEvents: "none",
+            opacity: 0.3,
           }}
         >
+          <Splash1
+            style={{
+              display: "block",
+              width: "60%",
+              marginLeft: "15%",
+              marginBottom: "25%",
+              color: colorGris.green600,
+              transform: "rotate(290deg)",
+            }}
+          />
           {/* <img src={url("earth")} style={{ width: "60%" }} /> */}
         </ParallaxLayer>
-
         <ParallaxLayer
           offset={2}
           speed={-0.3}
@@ -155,6 +196,7 @@ function App() {
           }}
         />
 
+        {/* Fixed screens */}
         <ParallaxLayer
           offset={0}
           speed={0.1}
@@ -165,9 +207,8 @@ function App() {
             justifyContent: "center",
           }}
         >
-          {/* <img src={url("server")} style={{ width: "20%" }} /> */}
+          Content 1{/* <img src={url("server")} style={{ width: "20%" }} /> */}
         </ParallaxLayer>
-
         <ParallaxLayer
           offset={1}
           speed={0.1}
@@ -177,8 +218,9 @@ function App() {
             alignItems: "center",
             justifyContent: "center",
           }}
-        ></ParallaxLayer>
-
+        >
+          Content 2
+        </ParallaxLayer>
         <ParallaxLayer
           offset={2}
           speed={-0}
@@ -189,7 +231,7 @@ function App() {
           }}
           onClick={() => parallax.current.scrollTo(0)}
         >
-          {/* <img src={url("clients-main")} style={{ width: "40%" }} /> */}
+          Content 3
         </ParallaxLayer>
       </Parallax>
     </div>
