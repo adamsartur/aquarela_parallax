@@ -28,12 +28,12 @@ function App() {
         <ParallaxLayer
           offset={1}
           speed={1}
-          style={{ backgroundColor: colorGris.green100 }}
+          style={{ backgroundColor: colorGris.green400, opacity: 0.7 }}
         />
         <ParallaxLayer
           offset={2}
           speed={1}
-          style={{ backgroundColor: colorGris.green100 }}
+          style={{ backgroundColor: 'rgb(36, 157, 215)', opacity: 0.7 }}
         />
 
         {/* Page Background */}
@@ -105,7 +105,7 @@ function App() {
               display: "block",
               width: "40%",
               marginLeft: "-10%",
-              color: colorGris.green400,
+              color: colorGris.red100,
               transform: "rotate(170deg)",
             }}
           />
@@ -138,18 +138,18 @@ function App() {
               display: "block",
               width: "70%",
               marginLeft: "10%",
-              color: colorGris.red200,
+              color: colorGris.green100,
             }}
           />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 1 }}>
+        <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.5 }}>
           <Splash3
             style={{
               display: "block",
               width: "60%",
               marginLeft: "80%",
-              color: colorGris.green800,
+              color: colorGris.red400,
             }}
           />
         </ParallaxLayer>
@@ -181,7 +181,7 @@ function App() {
               width: "60%",
               marginLeft: "15%",
               marginBottom: "25%",
-              color: colorGris.green600,
+              color: colorGris.green100,
               transform: "rotate(290deg)",
             }}
           />
